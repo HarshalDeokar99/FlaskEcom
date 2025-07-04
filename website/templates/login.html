@@ -1,0 +1,40 @@
+{% extends 'forms.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block body %}
+
+<section class="base" id="base-signup">
+    <div class="base-content">
+        <div class="form">
+            <h3>Login to start <br> Shopping </h3>
+            <hr class="first">
+            <form method="POST" action="{{ url_for('login' ) }}">
+                
+                <input type="hidden">
+                <!--for csrf token-->
+
+                <div class="email"><h4>Email Address</h4>
+                    <input type="email" name="email" required>
+                    <hr>
+                </div>
+
+                 <div class="password"><h4>Password</h4>
+                      <input type="password" name="password" required>
+                      <hr>
+                </div>
+
+
+
+                <div class="buttons">
+                    <a href="{{ url_for('sign_up') }}">Sign Up</a>
+                 
+                    <input type="submit">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

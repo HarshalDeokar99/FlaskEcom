@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Update Order {% endblock %}
+
+
+{% block body %}
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Order Status</th>
+            <th scope="col">Order Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <form action="{{ url_for('update_order',order_id=order_id ) }}" method="POST" enctype="multipart/form-data">
+               
+                <input type="hidden" name="" id="">
+
+                <td>
+
+                    <select name="order_status" id="">
+                        <option value="Pending">Pending</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Out for delivery">Out for delivery</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Canceled">Canceled</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" value="Update Status">
+                </td>
+            </form>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
